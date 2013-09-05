@@ -1,0 +1,83 @@
+=== File: post/views.py ===
+In file post/views.py, function del_post has 2 extra exits at lines 16, 19
+In file post/views.py, function newreply has 1 extra exit at line 27
+In file post/views.py, function delreply has 1 extra exit at line 43
+
+Basic Metrics for module post/views.py
+--------------------------------------
+
+          2    maxBlockDepth
+         10    numBlocks
+       1387    numCharacters
+          4    numDocStrings
+          4    numFcnDocStrings
+          3    numFunctions
+         23    numKeywords
+         49    numLines
+          1    numModuleDocStrings
+          3    numMultipleExitFcns
+        344    numTokens
+
+        100.00 %FunctionsHavingDocStrings
+
+Functions DocString present(+) or missing(-)
+--------------------------------------------
+
++ __main__
++ del_post
++ delreply
++ newreply
+
+
+McCabe Complexity Metric for file post/views.py
+------------------------------------------------
+
+          1    __main__
+          3    del_post
+          3    delreply
+          3    newreply
+
+=== File: post/models.py ===
+
+Basic Metrics for module post/models.py
+---------------------------------------
+
+          1    maxBlockDepth
+          5    numBlocks
+       1224    numCharacters
+          4    numClassDocStrings
+          4    numClasses
+          1    numComments
+          5    numDocStrings
+          1    numFcnDocStrings
+         10    numKeywords
+         50    numLines
+          1    numModuleDocStrings
+        273    numTokens
+
+        100.00 %ClassesHavingDocStrings
+          2.00 %Comments
+        100.00 %FunctionsHavingDocStrings
+
+Functions DocString present(+) or missing(-)
+--------------------------------------------
+
++ __main__
+
+
+Classes DocString present(+) or missing(-)
+------------------------------------------
+
++ Post
++ PostAdmin
++ Reply
++ ReplyAdmin
+
+
+McCabe Complexity Metric for file post/models.py
+-------------------------------------------------
+
+          1    __main__
+
+
+*** Processed 2 modules in run ***

@@ -1,0 +1,97 @@
+=== File: users/views.py ===
+In file users/views.py, function register has 2 extra exits at lines 41, 45
+In file users/views.py, function login_user has 5 extra exits at lines 68, 77, 83, 85, 87
+In file users/views.py, function follow has 2 extra exits at lines 143, 148
+In file users/views.py, function unfollow has 2 extra exits at lines 155, 160
+In file users/views.py, function deluser has 2 extra exits at lines 167, 174
+In file users/views.py, function perfil has 2 extra exits at lines 181, 195
+
+Basic Metrics for module users/views.py
+---------------------------------------
+
+          4    maxBlockDepth
+         46    numBlocks
+       7151    numCharacters
+          2    numComments
+          9    numDocStrings
+          9    numFcnDocStrings
+          8    numFunctions
+         89    numKeywords
+        195    numLines
+          1    numModuleDocStrings
+          6    numMultipleExitFcns
+       1758    numTokens
+
+          1.03 %Comments
+        100.00 %FunctionsHavingDocStrings
+
+Functions DocString present(+) or missing(-)
+--------------------------------------------
+
++ __main__
++ deluser
++ follow
++ login_user
++ logout_view
++ perfil
++ register
++ unfollow
++ update
+
+
+McCabe Complexity Metric for file users/views.py
+-------------------------------------------------
+
+          1    __main__
+          3    deluser
+          3    follow
+          9    login_user
+          1    logout_view
+          6    perfil
+          5    register
+          3    unfollow
+         11    update
+
+=== File: users/models.py ===
+
+Basic Metrics for module users/models.py
+----------------------------------------
+
+          2    maxBlockDepth
+          4    numBlocks
+       1049    numCharacters
+          2    numClassDocStrings
+          2    numClasses
+          4    numDocStrings
+          2    numFcnDocStrings
+          1    numFunctions
+         12    numKeywords
+         29    numLines
+          1    numModuleDocStrings
+        218    numTokens
+
+        100.00 %ClassesHavingDocStrings
+        100.00 %FunctionsHavingDocStrings
+
+Functions DocString present(+) or missing(-)
+--------------------------------------------
+
++ ExtendUser.content_file_name
++ __main__
+
+
+Classes DocString present(+) or missing(-)
+------------------------------------------
+
++ ExtendUser
++ ExtendUserAdmin
+
+
+McCabe Complexity Metric for file users/models.py
+--------------------------------------------------
+
+          1    ExtendUser.content_file_name
+          1    __main__
+
+
+*** Processed 2 modules in run ***

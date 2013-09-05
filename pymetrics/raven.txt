@@ -1,0 +1,82 @@
+=== File: raven/views.py ===
+In file raven/views.py, function home has 3 extra exits at lines 28, 38, 60
+In file raven/views.py, function contact has 2 extra exits at lines 89, 91
+
+Basic Metrics for module raven/views.py
+---------------------------------------
+
+          4    maxBlockDepth
+         18    numBlocks
+       3729    numCharacters
+          6    numDocStrings
+          6    numFcnDocStrings
+          5    numFunctions
+         47    numKeywords
+        103    numLines
+          1    numModuleDocStrings
+          2    numMultipleExitFcns
+        881    numTokens
+
+        100.00 %FunctionsHavingDocStrings
+
+Functions DocString present(+) or missing(-)
+--------------------------------------------
+
++ __main__
++ about
++ contact
++ help
++ home
++ index
+
+
+McCabe Complexity Metric for file raven/views.py
+-------------------------------------------------
+
+          1    __main__
+          1    about
+          4    contact
+          1    help
+         10    home
+          1    index
+
+=== File: raven/models.py ===
+
+Basic Metrics for module raven/models.py
+----------------------------------------
+
+          1    maxBlockDepth
+          3    numBlocks
+        796    numCharacters
+          2    numClassDocStrings
+          2    numClasses
+          3    numDocStrings
+          1    numFcnDocStrings
+          6    numKeywords
+         28    numLines
+          1    numModuleDocStrings
+        149    numTokens
+
+        100.00 %ClassesHavingDocStrings
+        100.00 %FunctionsHavingDocStrings
+
+Functions DocString present(+) or missing(-)
+--------------------------------------------
+
++ __main__
+
+
+Classes DocString present(+) or missing(-)
+------------------------------------------
+
++ sugerencias
++ sugerenciasAdmin
+
+
+McCabe Complexity Metric for file raven/models.py
+--------------------------------------------------
+
+          1    __main__
+
+
+*** Processed 2 modules in run ***

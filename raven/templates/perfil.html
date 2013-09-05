@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<link rel="SHORTCUT ICON" href="/static/img/favicon.ico">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+<link media="screen" href="/static/bootstrap.css" type="text/css" rel="stylesheet" />
+<link media="screen" href="/static/bootstrap.min.css" type="text/css" rel="stylesheet" />
+<link media="screen" href="/static/bootstrap-responsive.css" type="text/css" rel="stylesheet" />
+<link media="screen" href="/static/bootstrap-responsive.min.css" type="text/css" rel="stylesheet" />
+<script src="http://bootsnipp.com/js/jquery.js"></script>
+<script src="http://bootsnipp.com/js/bootstrap.min.js"></script>
+<script src="http://bootsnipp.com/js/prettify.js"></script>
+<script src="http://bootsnipp.com/js/codemirror.js"></script>
+<script src="http://bootsnipp.com/js/humane.min.js"></script>
+<link media="screen" type="text/css" href="/static/style_home.css"  rel="stylesheet">
+
+</head>
+
+<body>
+{% extends "base.html" %}
+{% block content %}
+
+<div class="container-fluid">
+	<div class="row-fluid">
+		<div class="span3">
+		  <div class="well sidebar-nav">
+		  	<img src="{{User.photo}}" class="img borde">
+			<ul class="nav nav-list">
+				<li class="nav-header">Sigue a:</li>
+					{% for users in follower %}
+						<p><a  href="/perfil/{{ users.user.id }}/">{{users.pseudo}}</a></br>
+						<a href="/unfollow/{{ users.user.id }}/"><input class="btn btn-mini btn-primary btn-danger" type="button" name="buttonseguir" value="Dejar"/></a>
+						<!--<a  href="/unfollow/{{ user.user.id }}/">dejar </a>-->
+						</p>
+					{% endfor%}
+			</ul>
+		  </div><!--/.well -->
+		</div><!--/span-->
+		<div class="span9">
+			
+			<h3>Cuervos de {{ users.pseudo }}</h3>
+			<div id="ultimos" class="hero-unit">		
+			{% if tweets|length %}
+						{% for tweet in tweets %}
+						<!--<div class="hero-unit">
+						
+							<p>Usuario: {{tweet.creator}} Fecha: {{tweet.created}} </p>
+							<p>{{tweet.body}}</p>
+						</div>-->
+						<div  class="row">
+							  <div id="cono" class="span8">
+								<div class="row">
+								  <div class="span8">
+									<h4><strong><a href="#"> {{tweet.creator.username}} </a></strong></h4>
+								  </div>
+								</div>
+								<div class="row">
+								  <div class="span2">
+									<a href="#" class="thumbnail">
+										<img src="{{User.photo}}" alt="">
+									</a>
+								  </div>
+								  <div class="span6">      
+									<p>{{tweet.body}}</p>
+								  </div>
+								</div>
+								<div class="row">
+								  <div class="span8">
+									<p></p>
+									<p>
+									  <i class="icon-user"></i> by <a href="/perfil/{{ tweet.creator.id }}/"> @{{tweet.creator.username}}</a> 
+									  | <i class="icon-calendar"></i> {{tweet.created}}
+									  <!--| <i class="icon-comment"></i> <a href="#">3 Comments</a>
+									  | <i class="icon-share"></i> <a href="#">39 Shares</a>-->
+									</p>
+								  </div>
+								</div>
+							  </div>
+							</div>
+							
+				{% endfor%}
+			{% endif%}
+		  </div>
+		</div><!--/span-->
+	</div><!--/row-->
+
+  <hr>
+
+  <footer>
+	<p>&copy; DSI-ETSII-ULL Proyecto DEA - 2013</p>
+  </footer>
+
+</div>
+{% endblock %}
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+						
+						
+

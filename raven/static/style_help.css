@@ -1,0 +1,27 @@
+.center {font-family:"Arial",Georgia,Serif,sans-serif; text-align: center; }
+body {
+	background-color: #BDBDBD;
+}
+.container{
+	background-color: white;
+	padding: 10px;
+	-webkit-border-radius: 6px;
+	-moz-border-radius: 6px;
+	border-radius: 6px;
+	
+	
+
+}
+.centro {margin-left: 170px;}
+textarea{
+    background: #F5F5F5;
+    border: 1px solid #E8E8E8;
+    color: #626262;
+    display: block;
+    float: left;
+    padding: 8px;
+    resize: none;
+    width: 700px;
+    -webkit-transition: all 0.1s linear;
+    -moz-transition: all 0.1s linear;
+}

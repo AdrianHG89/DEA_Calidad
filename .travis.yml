@@ -1,0 +1,29 @@
+language: python
+python:
+  - "2.7"
+env:
+  # - DJANGO=1.3.1
+  - DJANGO=1.5.1
+install:
+  - pip install -q Django==$DJANGO --use-mirrors
+  - pip install -q lettuce --use-mirrors
+  - pip install -q lxml --use-mirrors
+  - pip install -q urllib3 --use-mirrors
+  - pip install -q nose --use-mirrors
+  - pip install -q cssselect
+  - pip install -q PIL
+  # - pip install pep8 --use-mirrors
+  # - pip install mysql-python --use-mirrors
+  # - pip install https://github.com/dcramer/pyflakes/tarball/master
+  # - pip install -q -e . --use-mirrors
+  #
+  # Fix problem with python and threads in Travis workers
+  - "sudo rm -rf /dev/shm && sudo ln -s /run/shm /dev/shm"
+before_script:
+  # - "pep8 --exclude=migrations --ignore=E501,E225 src"
+  # - pyflakes -x W src
+  # - mysql -e 'create database mysite_db;'
+  # - python manage.py syncdb --noinput
+script:
+  - python manage.py harvest --no-server
+  - python manage.py test   

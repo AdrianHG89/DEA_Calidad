@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<link rel="SHORTCUT ICON" href="/static/img/favicon.ico">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+
+<link media="screen" href="/static/bootstrap.css" type="text/css" rel="stylesheet" />
+<link media="screen" href="/static/bootstrap.min.css" type="text/css" rel="stylesheet" />
+<link media="screen" href="/static/bootstrap-responsive.css" type="text/css" rel="stylesheet" />
+<link media="screen" href="/static/bootstrap-responsive.min.css" type="text/css" rel="stylesheet" />
+<script src="http://bootsnipp.com/js/jquery.js"></script>
+<script src="http://bootsnipp.com/js/bootstrap.min.js"></script>
+<script src="http://bootsnipp.com/js/prettify.js"></script>
+<script src="http://bootsnipp.com/js/codemirror.js"></script>
+<script src="http://bootsnipp.com/js/humane.min.js"></script>
+<link media="screen" type="text/css" href="/static/style_home.css"  rel="stylesheet">
+<script type="text/javascript">
+function showHide(elementid){
+    if (document.getElementById(elementid).style.display == 'none'){
+        document.getElementById(elementid).style.display = '';
+    } else {
+        document.getElementById(elementid).style.display = 'none';
+    }
+}
+</script>
+</head>
+
+<body>
+{% extends "base.html" %}
+{% block content %}
+
+<div class="container-fluid">
+  <div class="row-fluid">
+	<div class="span3">
+	  <div class="well sidebar-nav">
+		<ul class="nav nav-list">
+			<li class="nav-header">Usuarios</li>
+				{% for usu in Users %}
+					<p>{{usu.pseudo}}</br>
+					<a href="/seguir/{{ usu.user.id }}/"><input class="btn btn-mini btn-primary btn-success" type="button" name="buttonseguir" value="Seguir"/></a>
+					<!--<a  href="/seguir/{{ usu.user.id }}/">seguir </a>-->
+					</p>
+				{% endfor%}
+			<li class="nav-header">Siguiendo a:</li>
+				{% for user in seguidores %}
+					<p><a  href="/perfil/{{ user.user.id }}/">{{user.pseudo}}</a></br>
+					<a href="/unfollow/{{ user.user.id }}/"><input class="btn btn-mini btn-primary btn-danger" type="button" name="buttonseguir" value="Dejar"/></a>
+					<!--<a  href="/unfollow/{{ user.user.id }}/">dejar </a>-->
+					</p>
+				{% endfor%}
+		</ul>
+	  </div><!--/.well -->
+	</div><!--/span-->
+	<div class="span9">
+	  <div class="hero-unit">
+		
+		<h2>Bienvenido {{ User.username }}</h2>
+		<form action="" method="post">{% csrf_token %}
+					<h5>Enviar Nuevo Cuervo</h5>
+					<textarea rows="6" class="mensaje" maxlength="140" name="mensaje" ></textarea></br></br></br></br></br></br>
+					<input class="btn btn-inverse btn-primary btn-large" type="submit" value="Enviar Cuervo">
+		</form>
+	  </div>
+	  	
+		<h3>Ultimos Cuervos</h3>
+		<div id="ultimos" class="hero-unit">		
+		{% if post|length %}
+			{% for tweet in post %}
+					<!--<div class="hero-unit">
+					
+						<p>Usuario: {{tweet.creator}} Fecha: {{tweet.created}} </p>
+						<p>{{tweet.body}}</p>
+					</div>-->
+					<div  class="row">
+						  <div id="cono" class="span8">
+							<div class="row">
+							  <div class="span8">
+								<h4><strong><a href="/perfil/{{ tweet.creator.id }}/"> {{tweet.creator}} </a></strong></h4>
+							  </div>
+							</div>
+							<div class="row">
+							  <div class="span2">
+								{% for ext in Extendido %}
+									{% if  ext.user == tweet.creator %}
+									<a class="thumbnail">
+										<img src="{{ext.photo}}" alt="">
+									</a>
+									{% endif %}
+								{% endfor %}
+							  </div>
+							  <div class="span6">      
+								<p>{{tweet.body}}</p>
+							  </div>
+							</div>
+							<div class="row">
+							  <div class="span8">
+								<p></p>
+								<p>
+								  <i class="icon-user"></i> by <a href="/perfil/{{ tweet.creator.id }}/"> @{{tweet.creator}}</a> 
+								  | <i class="icon-calendar"></i> {{tweet.created}}
+								  {% if tweet.creator == User or User.is_staff %}
+								  | <i class="icon-trash"></i> <a href="/borrar/{{ tweet.id }}/">borrar</a>
+								  {% endif %}								  
+								  |<i class="icon-comment"></i> <a href="javascript:showHide('div_{{tweet.id}}');">respuestas</a>
+								 
+								  
+								  <!--| <i class="icon-comment"></i> <a href="#">3 Comments</a>
+								  | <i class="icon-share"></i> <a href="#">39 Shares</a>-->
+								</p>
+							  </div>
+							 </div>
+							 
+								
+						  </div>
+						 
+						</div>
+						<div  id= "div_{{tweet.id}}"  style="display:none">
+						{% for reply in tweet.reply.all %}
+					
+						<div  class="row">
+						  <div id="cono" class="span8">
+							<div class="row">
+							  <div class="span8">
+								<h4><strong><a href="/perfil/{{ reply.creator.id }}/"> {{reply.creator}} </a></strong></h4>
+							  </div>
+							</div>
+							<div class="row">
+							  <div class="span2">
+								{% for ext in Extendido %}
+									{% if  ext.user == reply.creator %}
+									<a href="#" class="thumbnail">
+										<img src="{{ext.photo}}" alt="">
+									</a>
+									{% endif %}
+								{% endfor %}
+							  </div>
+							  <div class="span6">      
+								<p>{{reply.body}}</p>
+							  </div>
+							</div>
+							<div class="row">
+							  <div class="span8">
+								<p></p>
+								<p>
+								  <i class="icon-user"></i> by <a href="/perfil/{{ reply.creator.id }}/"> @{{reply.creator}}</a> 
+								  | <i class="icon-calendar"></i> {{reply.created}}
+								  {% if reply.creator == User or User.is_staff %}
+								  | <i class="icon-trash"></i> <a href="/delrep/{{ reply.id }}/">borrar</a>
+								  {% endif %}								  
+								</p>
+							  </div>
+							 </div>							
+						  </div>						 
+						</div>
+						
+						 {% endfor %}
+						
+						
+						
+						
+						 <div class="hero-unit">
+								  <form action="/resp/{{ tweet.id }}/" method="post">{% csrf_token %}
+										<h2>Responder</h2>
+										<textarea rows="6" class="mensaje" maxlength="140" name="mensaje" ></textarea></br></br></br></br></br>
+										<input class="btn btn-inverse btn-primary btn-large" type="submit" value="Enviar Cuervo">
+									</form>
+									</div>
+						</div>
+						
+			{% endfor%}
+		{% endif%}
+	  </div>
+	</div><!--/span-->
+  </div><!--/row-->
+
+  <hr>
+
+  <footer>
+	<p>&copy; DSI-ETSII-ULL Proyecto DEA - 2013</p>
+  </footer>
+
+</div>
+</div>
+{% endblock %}
+</body>
+</html>

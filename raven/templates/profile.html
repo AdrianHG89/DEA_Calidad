@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<link rel="SHORTCUT ICON" href="/static/img/favicon.ico">
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+	<link media="screen" href="/static/bootstrap.css" type="text/css" rel="stylesheet" />
+	<link media="screen" href="/static/bootstrap.min.css" type="text/css" rel="stylesheet" />
+	<link media="screen" href="/static/bootstrap-responsive.css" type="text/css" rel="stylesheet" />
+	<link media="screen" href="/static/bootstrap-responsive.min.css" type="text/css" rel="stylesheet" />
+	<script src="http://bootsnipp.com/js/jquery.js"></script>
+	<script src="http://bootsnipp.com/js/bootstrap.min.js"></script>
+	<script src="http://bootsnipp.com/js/prettify.js"></script>
+	<script src="http://bootsnipp.com/js/codemirror.js"></script>
+	<script src="http://bootsnipp.com/js/humane.min.js"></script>
+	
+</head>
+<body>
+	{% extends "base.html" %}
+	{% block content %}
+		<div class="container">
+			<div class="row-fluid">
+					<div class="span12">
+						<div class="span6">
+							<div class="area">
+								<form action="" method="post">{% csrf_token %}
+									<h1>Modificar Perfil de Usuario</h1>
+									<label>Nombre de usuario </label>
+									<input id="id_username" maxlength="30" name="username" type="text" value= "{{ User.username }}" />
+									<label>Alias </label>
+									<input id="id_alias" maxlength="30" name="alias" type="text" value= "{{ Alias }}" />
+									<label>Correo electronico </label>
+									<input id="id_email" maxlength="30" name="email" type="text" value= "{{ User.email }}"/>
+									<label>Contraseña </label>
+									<input id="id_password" maxlength="30" name="password" type="password" />
+									<label>Repetir Contraseña </label>
+									<input id="id_rpassword" maxlength="30" name="rpassword" type="password" />
+									<p>"{{ MERROR}}" </p>
+
+									<p class="file-upload">Imagen Actual: <a href="{{ Extend.photo}}"> <img src="{{ Extend.photo}}" class="img-rounded" /></a><br/>
+									<label class="radio">
+										<input type="checkbox" name="borrar" id="borrar" value="borra">
+										Borrar Imagen.
+									</label>
+									<br/> URL de la nueva imagen: <input id="id_photo" name="photo" type="url" /></p>						
+									<input type="submit" value="Actualizar">
+								</form>
+								<p>Si desea borrar su cuenta presione el siguiente boton:</p>
+								<a class="btn btn-inverse btn-primary btn-large"  value="Eliminar cuenta" href="/deluser/">Borrar cuenta</a>
+							</div>
+						</div>
+					</div>
+			</div>
+		</div>	
+	
+	{% endblock %}
+
+</body>
+</html>
+<!--
+<div class="container_12" id="pagina">
+		<div class="grid_12" id="menu">
+			<div>
+				<a href="/help"> Ayuda </a>
+				 <a href="/logout" >logout</a>
+				  <a href="/profile" >Profile</a>
+				  
+				 <h1>bienvenido {{ User.username }}</h1>
+			</div>
+			
+			
+		</div>
+		<div class="grid_12" id="contentMain">
+			<div class="grid_8 alpha">
+				<div id="e_destacada">
+					<form action="" method="post">{% csrf_token %}
+						<h1>Modificar Perfil usuario</h1>
+						<label>* Nombre de usuario </label>
+						<input id="id_username" maxlength="30" name="username" type="text" value= "{{ User.username }}" />
+						<label>* Alias </label>
+						<input id="id_alias" maxlength="30" name="alias" type="text" value= "{{ Extend.username }}" />
+						<label> Correo electronico </label>
+						<input id="id_email" maxlength="30" name="email" type="text" value= "{{ User.email}}"/>
+						<label> Contraseña </label>
+						<input id="id_password" maxlength="30" name="password" type="text" />
+						<label> Contraseña </label>
+						<p class="file-upload">Currently: <a href="{{ Extend.photo}}"> <img src="{{ Extend.photo}}" /> </a> <span class="clearable-file-input"><input id="photo-clear_id" name="photo-clear" type="checkbox" /> <label for="photo-clear_id">Clear</label></span><br />Change: <input id="id_photo" name="photo" type="url" /></p>						
+						<input type="submit" value="Actualizar">
+					</form>
+					
+				</div>
+				<div class="grid_2 alpha">
+					<div id="col1">
+						<h3>Followers</h3>
+						
+					</div>
+				</div>
+				<div class="grid_6 omega">
+					
+			</div>
+			<div class="grid_4 omega">
+				<div id="colaux">
+						<h3>Columna auxiliar</h3>
+				</div>
+			</div>
+			<div class="clear"></div>
+		</div>
+		<div class="clear"></div>
+		<div class="grid_12" id="footer">
+			<h3>DSI-ETSII-ULL - 2013</h3>
+		</div>
+	</div>
+
+-->

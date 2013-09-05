@@ -1,0 +1,56 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+	<link rel="SHORTCUT ICON" href="/static/img/favicon.ico">
+	<meta http-equiv="Content-type" content="text/html; charset=utf-8" />
+	<link rel="STYLESHEET" type="text/css" href="/static/bootstrap-responsive.css">
+	<link rel="STYLESHEET" type="text/css" href="/static/bootstrap-responsive.min.css">
+	<link rel="STYLESHEET" type="text/css" href="/static/bootstrap.css">
+	<link rel="STYLESHEET" type="text/css" href="/static/bootstrap.min.css">
+	<link media="screen" type="text/css" href="/static/style_nuevo.css"  rel="stylesheet">
+</head>
+<body>
+{% extends "base.html" %}
+{% block content %}
+
+	<div class="container">
+		<div class="row-fluid">
+				<div class="span12">
+					<div class="span6">
+						<div class="area">
+							<form action="/login/" method="post" class="form-horizontal"> {% csrf_token %}
+								<div class="heading">
+									<h4 class="form-heading">Sign In</h4>
+									<h4 class="form-heading">{{state}}</h4>
+								</div>
+								<div class="control-group">
+									<label class="control-label" for="inputUsername">Username</label>
+									<div class="controls">
+										<input type="text" name="username" id="inputUsername" placeholder="Usuario">
+									</div>
+								</div>
+								<div class="control-group">
+									<label class="control-label" for="inputPassword">Password</label>
+									<div class="controls">
+										<input type="password" name="password" id="inputPassword" placeholder="Contraseña">
+									</div>
+								</div>
+								<div class="control-group">
+									<div class="controls">
+										<button type="submit" class="btn btn-success">Sign In</button>
+									</div>
+								</div>	
+							</form>
+						</div>
+					</div>
+				</div>
+		</div>
+		<hr>
+
+  <footer>
+	<p>&copy; DSI-ETSII-ULL Proyecto DEA - 2013</p>
+  </footer>
+	</div>	
+{% endblock %}
+</body>
+</html>

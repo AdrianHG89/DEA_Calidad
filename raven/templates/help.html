@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<link rel="SHORTCUT ICON" href="/static/img/favicon.ico">
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+	<link media="screen" href="/static/bootstrap.css" type="text/css" rel="stylesheet" />
+	<link media="screen" href="/static/bootstrap.min.css" type="text/css" rel="stylesheet" />
+	<link media="screen" href="/static/bootstrap-responsive.css" type="text/css" rel="stylesheet" />
+	<link media="screen" href="/static/bootstrap-responsive.min.css" type="text/css" rel="stylesheet" />
+	<link rel="STYLESHEET" type="text/css" href="/static/style_help.css">
+	<script src="http://bootsnipp.com/js/jquery.js"></script>
+	<script src="http://bootsnipp.com/js/bootstrap.min.js"></script>
+	<script src="http://bootsnipp.com/js/prettify.js"></script>
+	<script src="http://bootsnipp.com/js/codemirror.js"></script>
+	<script src="http://bootsnipp.com/js/humane.min.js"></script>
+
+	
+</head>
+<body>
+	{% extends "base.html" %}
+	{% block content %}
+	
+	<div class="container">
+		<div class="hero-unit center">
+			<h1>AYUDA</h1>	
+		</div>
+		<h1>-.Funciones Básicas.-</h1>
+		<h3>Cómo publicar un Cuervo:</h3>
+		<div class="alert alert-info">
+			<strong>Definición:</strong> Un Cuervo es un mensaje de 140 caracteres publicado vía Raven.
+		</div>
+		<ol>
+			<li><strong>Inicia sesión</strong> en tu cuenta de Raven. Si no tienes cuenta registrate.</li>
+			<li><strong>Escribe tu Cuervo</strong> en el recuadro de la parte central de tu pantalla (como se muestra abajo)</li>
+			<li>Aseg&uacute;rate que tu actualizaci&oacute;n tenga <strong>menos de 140 caracteres</strong></li>
+			<li>Haz clic en el botón para <strong>Enviar Cuervo</strong> para <strong>publicar el Cuervo</strong> en tu perfil.</li>
+			<li><strong>Inmediatamente</strong> verás tu Cuervo.</li>
+		</ol>
+		
+		<h3>Cómo eliminar tu Cuervo:</h3>
+		<ul>
+			<li>Para eliminar un Cuervo que hayas publicado, has uso del botón borrar que encuentras en el pie de cada Cuervo.</li>
+			<li>Ten en cuenta que sólo puedes eliminar Cuervos que hayas publicado desde tu cuenta o comentarios que hayas hecho a Cuervos de otros usuarios.</li>
+			<li>No puedes eliminar Cuervos que hayan sido publicados por otros usuarios. En vez de ello, puedes dejar de seguir usuarios cuyos Cuervos no desees leer.</li>
+		</ul>
+
+		<h3>Cómo seguir a un usuario:</h3>
+		<ol>
+			<li>En la parte izquierda de tu pantalla, verás una zona reservada para mostrar los usuarios registrado y que no sigues y además más abajo se te mostraran los usuarios que sigues.</li>
+			<li>En la parte usuarios, al nombre de los usuarios les acompaña un botón <strong>Seguir</strong>, para seguir haz clic. No podrás ver ni visitar el perfil de aquellos usuarios que no sigas antes.</li>
+		</ol>
+		
+		<h3>¿Por qué querría dejar de seguir a alguien?</h3>
+		<ul>
+			<li>Típicamente, las personas dejan de seguir a otros usuarios cuando ya no desean ver sus Cuervos en su cronología de inicio.</li>
+			<li>Si dejas de seguir a un usuario debido a que sus actualizaciones parecen spam, por favor, contacte con nosotros.</li>
+		</ul>
+		<h3>Cómo dejar de seguir a un usuario:</h3>
+		<ol>
+			<li>En la parte izquierda de tu pantalla, verás una zona reservada para mostrar los usuarios registrado y que no sigues y además más abajo se te mostraran los usuarios que sigues.</li>
+			<li>En la parte siguiendo, al nombre de los usuarios les acompaña un botón <strong>Dejar</strong>, para dejar de seguir haz clic. Recuerda que dejando de seguir a alguien ya no tendras acceso a su actividad en Raven.</li>
+		</ol>
+		<h1>-.Modificar información de cuenta.-</h1>
+		<h3>Cómo cambiar tu contraseña:</h3>
+		<ol>
+			<li>Desde tu cuenta con sesión iniciada, haz clic en el <strong>ícono del engranaje</strong> donde pone <strong>Configuración</strong> de la barra de navegación de la parte superior derecha y selecciona <strong>Información Personal</strong>.</li>
+			<li>Ahora se te muestran los datos de tu cuenta. En los campos <strong>Contraseña </strong> y <strong>Repetir Contraseña </strong> ingresa tu nueva contraseña.</li>
+			<li>Guarda los cambios haciendo clic en <strong>Guardar cambios</strong>.</li>
+		</ol>
+		<h3>Cómo cambiar tu nombre y tu alias:</h3>
+		<ol>
+			<li>Desde tu cuenta con sesión iniciada, haz clic en el <strong>ícono del engranaje</strong> donde pone <strong>Configuración</strong> de la barra de navegación de la parte superior derecha y selecciona <strong>Información Personal</strong>.</li>
+			<li>Ahora se te muestran los datos de tu cuenta. En los campos <strong>Nombre de usuario </strong> y <strong>Alias </strong> podrás hacer los cambios que quieras.</li>
+			<li>Guarda los cambios haciendo clic en <strong>Guardar cambios</strong>.</li>
+		</ol>
+		<h3>Cómo cambiar tu e-mail:</h3>
+		<ol>
+			<li>Desde tu cuenta con sesión iniciada, haz clic en el <strong>ícono del engranaje</strong> donde pone <strong>Configuración</strong> de la barra de navegación de la parte superior derecha y selecciona <strong>Información Personal</strong>.</li>
+			<li>Ahora se te muestran los datos de tu cuenta. En el campos <strong>Correo electrónico </strong> ingresa tu nueva dirección de e-mail.</li>
+			<li>Guarda los cambios haciendo clic en <strong>Guardar cambios</strong>.</li>
+		</ol>
+		<h3>Cómo establecer, cambiar o borrar tu foto de perfil:</h3>
+		<ul>
+			<li>Desde tu cuenta con sesión iniciada, haz clic en el <strong>ícono del engranaje</strong> donde pone <strong>Configuración</strong> de la barra de navegación de la parte superior derecha y selecciona <strong>Información Personal</strong>.</li>
+			<li>Ahora si deseas establecer o cambiar tu imagen de perfil. En el campo <strong>URL de la nueva imagen </strong> ingresa la URL de tu imagen.</li>
+			<li>Guarda los cambios haciendo clic en <strong>Guardar cambios</strong>.</li>
+			<li>Si lo que quieres es borrar tu imagen selecciona el check <strong> Borrar Imagen </strong> y pulsa el botón <strong>Guardar cambios</strong>.</li>
+			<li>Recuerda que por defecto tendras una imagen de perfil de Raven.</li>
+		</ul>
+		
+	<hr>
+
+	<footer>
+		<p>&copy; DSI-ETSII-ULL Proyecto DEA - 2013</p>
+	</footer>
+	</div>
+	{% endblock %}
+</body>
+</html>

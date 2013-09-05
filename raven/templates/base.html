@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title> Raven | {{title}} </title>
+<link rel="SHORTCUT ICON" href="/static/img/logo.png">
+</head>
+<body>
+<div class="navbar navbar-inverse">
+	<div class="navbar-inner">
+		<div class="container-fluid">
+
+			<a class="brand" {% if not user.is_authenticated %} href="/index" {% else %} href="/home" {% endif%} name="top">Raven</a>
+			<div class="nav-collapse collapse">
+				<ul class="nav">
+					{% if not user.is_authenticated %}
+					<li class="divider-vertical"></li>
+					<li {% if title == "Registro" %}	class="active"	{% endif%}><a href="/registro"><i class="icon-upload"></i> Sign up</a></li>
+					{% endif%}
+					{% if not user.is_authenticated %}
+					<li class="divider-vertical"></li>
+					<li {% if title == "Login" %}	class="active"	{% endif%}><a  href="/login"><i class="icon-ok-circle"></i> Sign in</a></li>
+					{% endif%}
+					{% if user.is_authenticated %}
+					<li class="divider-vertical"></li>
+					<li {% if title == "Home" %}	class="active"	{% endif%}><a href="/home"><i class="icon-home"></i> Home</a></li>
+					{% endif%}
+					{% if user.is_authenticated %}
+					<li class="divider-vertical"></li>
+					<li {% if title == "Perfil" %}	class="active"	{% endif%}><a href="/perfil/{{ user.id }}/"><i class="icon-user"></i> Perfil </a></li>
+					{% endif%}
+					<li class="divider-vertical"></li>
+					<li {% if title == "Ayuda" %}	class="active"	{% endif%}><a href="/help"><i class="icon-question-sign"></i> Ayuda</a></li>
+					<li class="divider-vertical"></li>
+					<li {% if title == "Sobre nosotros" %}	class="active"	{% endif%}><a href="/about"><i class="icon-info-sign"></i> Sobre Nosotros</a></li>
+					<li class="divider-vertical"></li>
+					<li {% if title == "Contacto" %}	class="active"	{% endif%}><a href="/contact"><i class="icon-bullhorn"></i> Contacto</a></li>
+					<li class="divider-vertical"></li>
+				</ul>
+				{% if user.is_authenticated %}
+				<div class="btn-group pull-right">
+					<a class="btn dropdown-toggle" data-toggle="dropdown" href="#">
+						<i class="icon-cog"></i> Configuracion	<span class="caret"></span>
+					</a>
+					<ul class="dropdown-menu">
+						<li><a href="/profile"><i class="icon-pencil"></i> Informacion Personal</a></li>
+						<li class="divider"></li>
+						<li><a href="/logout"><i class="icon-off"></i> Logout</a></li>
+					</ul>
+				</div>
+				{% endif%}
+			</div>
+			<!--/.nav-collapse -->
+		</div>
+		<!--/.container-fluid -->
+	</div>
+	<!--/.navbar-inner -->
+</div>
+<!--/.navbar -->
+	<div>
+        {% block content %}{% endblock %}
+    </div>
+	
+</body>
+</html>

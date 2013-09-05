@@ -1,0 +1,70 @@
+
+
+<div class="form_subtitle">crear un nuevo usuario</div>
+
+<form name="." method="post">    {% csrf_token %}     
+
+<div class="form_row">
+
+	<div class="contact_input" />{{ form.usuario.errors }}</div>
+
+<label class="contact"><strong>usuario:</strong></label>	
+
+<div class="contact_input" />{{ form.usuario }}</div>
+
+</div>  
+
+
+
+<div class="form_row">
+
+<div class="contact_input" />{{ form.email.errors }}</div>
+
+<label class="contact"><strong>Email:</strong></label>
+
+<div class="contact_input" />{{ form.email }}</div>
+
+</div>
+
+
+
+<div class="form_row">
+
+<div class="contact_input" />{{ form.password1.errors }}</div>
+
+<label class="contact"><strong>contraseña:</strong></label>
+
+<div class="contact_input" />{{ form.password1 }}</div>
+
+</div>
+
+
+
+
+
+<div class="form_row">
+
+<div class="contact_input" />{{ form.password2.errors }}</div>
+
+<label class="contact"><strong>de vuelta:</strong></label>
+
+
+
+<div class="contact_input" />{{ form.password2 }}</div>
+
+</div>
+
+
+
+<div class="form_row">
+
+<input type="submit" class="register" value="registrar" />
+
+</div>   
+
+</form>     
+
+</div>
+
+
+<h1>Formulario guardado con exito</h1>

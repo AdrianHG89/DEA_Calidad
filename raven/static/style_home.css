@@ -1,0 +1,46 @@
+textarea{
+    background: #F5F5F5;
+    border: 1px solid #E8E8E8;
+    color: #626262;
+    display: block;
+    float: left;
+    padding: 8px;
+    resize: none;
+    width: 700px;
+    -webkit-transition: all 0.1s linear;
+    -moz-transition: all 0.1s linear;
+}
+body {
+	background-color: #BDBDBD;
+}
+.sidebar-nav {
+	padding: 9px 0;
+}
+
+@media (max-width: 980px) {
+	/* Enable use of floated navbar text */
+	.navbar-text.pull-right {
+	  float: none;
+	  padding-left: 5px;
+	  padding-right: 5px;
+	}
+}
+#cono{
+	-webkit-border-radius: 6px;
+	-moz-border-radius: 6px;
+	border-radius: 6px;
+	border:1px solid #1C1C1C;
+	width: 800px;
+}
+
+img{
+	margin-left: 26px;
+	-webkit-border-radius: 6px;
+	-moz-border-radius: 6px;
+	border-radius: 6px;
+
+}
+
+
+
+

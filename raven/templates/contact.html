@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<link rel="SHORTCUT ICON" href="/static/img/favicon.ico">
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+	<link media="screen" href="/static/bootstrap.css" type="text/css" rel="stylesheet" />
+	<link media="screen" href="/static/bootstrap.min.css" type="text/css" rel="stylesheet" />
+	<link media="screen" href="/static/bootstrap-responsive.css" type="text/css" rel="stylesheet" />
+	<link media="screen" href="/static/bootstrap-responsive.min.css" type="text/css" rel="stylesheet" />
+	<link rel="STYLESHEET" type="text/css" href="/static/style_help.css">
+	<script src="http://bootsnipp.com/js/jquery.js"></script>
+	<script src="http://bootsnipp.com/js/bootstrap.min.js"></script>
+	<script src="http://bootsnipp.com/js/prettify.js"></script>
+	<script src="http://bootsnipp.com/js/codemirror.js"></script>
+	<script src="http://bootsnipp.com/js/humane.min.js"></script>
+	
+</head>
+	<body>
+		{% extends "base.html" %}
+		{% block content %}
+			<div class="container">
+				<div class="hero-unit center">
+					<h1>Contacto</h1>	
+				</div>
+				
+					<form class="well span8 centro" method="post" action="">{% csrf_token %}
+					  <!--<div class="row red">-->
+							<div class="span3">
+								<label>Nombre</label>
+								<input name="subject" type="text" class="span3" placeholder="Nombre">
+								<label>Dirección de correo</label>
+								<input name="from_email" type="text" class="span3" placeholder="Dirección de correo">
+							</div>
+							<div class="span5">
+								<label>Mensaje</label>
+								<textarea name="message" id="message" class="input-xlarge span5" rows="10"></textarea>
+								<button type="submit" class="btn btn-primary">Enviar</button>
+							</div>
+						
+							
+						<!--</div>-->
+					</form>
+				
+			</div>
+
+		{% endblock %}
+  	</body>
+</html>
